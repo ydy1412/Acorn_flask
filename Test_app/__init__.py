@@ -1,10 +1,9 @@
 from flask import Flask,g,make_response,Response,request
-
+from datetime import datetime,date
 # Application 객체 생성
 app =Flask(__name__)
 # 좀 더 세밀한 에러까지 나게 해줌.
 app.debug = True
-
 ### route parameter
 
 @app.route('/res1')
@@ -70,9 +69,27 @@ def helloworld2():
     return "hello Flask World!"
 
 ######## request parameter
-#/rp?v=한글 이라는 url을 치면 q = '한글' 이라고 출력되서 나옴.
-@app.route('/rp')
-def rp() :
+#/rpargs?v=한글 => q = 한글 이라고나옴.
+# => 장점 : 빠름.
+# => 단점 : 데이터의 양이 한정적임(1024byte)
+@app.route('/rpargs')
+def rpargs() :
+    q = request.args.get('v')
+    return "q= %s" % str(q)
+
+#/rppost?v=한글 => q = 한글 이라고나옴.
+# => 장점 : 데이터를 무한정 보낼 수 있음
+# => 단점 : 느림
+@app.route('/rppost')
+def rppost() :
+    q = request.form.get('v')
+    return "q= %s" % str(q)
+
+#/rpvalues?v=한글 => q = 한글 이라고나옴.
+# => 장점 : 편함
+# => 단점 : 컴퓨터에 부담을 줌
+@app.route('/rpvalues')
+def rpvalues() :
     q = request.values.get('v')
     return "q= %s" % str(q)
 
@@ -81,3 +98,19 @@ def rp() :
 def rpl() :
     q = request.values.getlist('v')
     return "q= %s" % str(q)
+
+# request 처리 용 함수
+def ymd(fmt):
+    def trans(date_str) :
+        return datetime.strptime(date_str,fmt)
+    return trans
+
+@app.route('/dt')
+def dt() :
+    # /dt?date = 2019-08-02 라고 주면 -> 우리나라 시간 형식 :2019-08-02 00:00:00
+    # /dt만 주어지면 data.today()를 표현. => 우리나라 시간 형식 :2019-10-08
+    # 함수에 함수를 넣는 이유는 안쓰는 함수는 만들지 않고 쓰는 함수는 한번만 만들면 계속 사용할 수 있기 때문이란다.
+    datestr = request.values.get('date',date.today(), type = ymd("%Y-%m-%d"))
+    return "우리나라 시간 형식 :" + str(datestr)
+
+
