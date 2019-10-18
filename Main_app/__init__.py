@@ -10,6 +10,7 @@ app.config.update(
     SESSION_COOKIE_NAME  = 'pyweb_flask_session',
     PERMANENT_SESSION_LIFETIME = timedelta(31)
 )
+
 ### route parameter
 
 @app.route("/tmpl")
@@ -21,14 +22,16 @@ def t():
 def test():
     return render_template("post.html")
 
-@app.route('/post',methods = ['POST'])
+@app.route('/post',methods = ['POST','GET'])
 def post():
     List = []
     for i in range(1,6) :
-        String = 'Test'+str(i)
+        parameter = "Test" + str(i)
+        value = request.form[parameter]
+        String = 'Test'+str(value)
+        print(String)
         List.append(String)
     return ",".join(List)
-
 
 # write cookie
 @app.route('/wc')
@@ -39,6 +42,7 @@ def Init() :
     res.set_cookie(key,val)
     session['Token'] = '123X'
     return make_response(res)
+
 
 @app.route('/show_result')
 def show_result() :
