@@ -1,4 +1,4 @@
-from flask import Flask,g,make_response,Response,request
+from flask import Flask,g,make_response,Response,request,render_template
 from datetime import datetime,date
 # Application 객체 생성
 app =Flask(__name__)
@@ -10,7 +10,7 @@ app.debug = True
 def res1():
     custom_res = Response("Custom Response",201,{'test':'ttt'})
     # 헤더를({'test' : 'ttt'}) 보내고 싶을땐 dict형으로 전송
-    return make_response(custom_res)
+    return getattr(g,'str','111')
     # make_response는 데이터를 stream 형태로 전송함.
 
 # before_first_request : 사용자가 처음 사이트에 접속하여 request를 보내자마자 실행되는 함수
@@ -24,6 +24,11 @@ def before_request():
     print("before_request!!")
     # 서버를 제어하고 싶을때 주로 사용됨.
     g.str = '한글'
+
+@app.before_first_request
+def before_request():
+    print("first_request!!")
+    # 서버를 제어하고 싶을때 주로 사용됨.
 
 # url을 통해 백엔드에 들어오는 데이터를 유동적으로 받을 수 있음.
 @app.route('/test/<tid>')
@@ -61,7 +66,7 @@ def wsgi_test():
     # body를 적절한 형태의 str으로 변형한 뒤 header의 값을 형성.
     # header에는 content-type와 content-length 데이터를 넣어서 전송.
     # start_response의 인수에 header를 넣어서 실행 시킨 뒤 [body] 를 반환.
-    # make_response는 [body]를 stream의 형태로 전송
+    # make_response는 [body]를 stream의 형태로 전송(image와 같은 파일)
     return make_response(application)
 
 @app.route("/")
@@ -75,7 +80,11 @@ def helloworld2():
 @app.route('/rpargs')
 def rpargs() :
     q = request.args.get('v')
-    return "q= %s" % str(q)
+    if str(q) == "한글":
+        templates = "Application.html"
+    else :
+        templates = 'post.html'
+    return render_template(templates)
 
 #/rppost?v=한글 => q = 한글 이라고나옴.
 # => 장점 : 데이터를 무한정 보낼 수 있음
@@ -83,7 +92,12 @@ def rpargs() :
 @app.route('/rppost')
 def rppost() :
     q = request.form.get('v')
-    return "q= %s" % str(q)
+
+    if str(q) == "한글":
+        templates = "Application.html"
+    else :
+        templates = 'post.html'
+    return render_template(templates)
 
 #/rpvalues?v=한글 => q = 한글 이라고나옴.
 # => 장점 : 편함

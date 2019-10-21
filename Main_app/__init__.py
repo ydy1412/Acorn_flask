@@ -11,7 +11,7 @@ app.config.update(
     PERMANENT_SESSION_LIFETIME = timedelta(31)
 )
 
-AI_model =
+# AI_model =
 
 ### route parameter
 

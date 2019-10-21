@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <title>Post</title>
     <style>
-
+        #input_color {
+        color : red;
+        width : 10%;
+        height : 10%;
+        border : 10%;
+        }
+        #2 {
+        color : red;
+        width : 10%;
+        height : 10%;
+        border : 10%;
+        }
+        .color {
+        color : blue;
+        }
     </style>
 </head>
 <body>
-    <form action="/post1" method = "post">
-        <p> 테스트1 : <input type = "text" name = "Test1"></p>
-        <p> 테스트2 : <input type = "text" name = "Test2"></p>
-        <p> 테스트3 : <input type = "text" name = "Test3"></p>
-        <p> 테스트4 : <input type = "text" name = "Test4"></p>
-        <p> 테스트5 : <input type = "text" name = "Test5"></p>
-        <input type = "submit" value = "정보 넘기기" name ='transfer'>
+    <form id = "2" action="/post1" method = "post">
+        <p> 테스트1 : <input class = "color" type = "text" name = "Test1"></p>
+        <p> 테스트2 : <input class = "color" type = "text" name = "Test2"></p>
+        <p> 테스트3 : <input class = "color" type = "text" name = "Test3"></p>
+        <p> 테스트4 : <input class = "color" type = "text" name = "Test4"></p>
+        <p> 테스트5 : <input class = "color" type = "text" name = "Test5"></p>
+        <input id = "input_color" type = "submit" value = "정보 넘기기" name ='transfer'>
     </form>
 </body>
 </html>
