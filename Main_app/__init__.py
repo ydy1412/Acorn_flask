@@ -11,6 +11,8 @@ app.config.update(
     PERMANENT_SESSION_LIFETIME = timedelta(31)
 )
 
+AI_model =
+
 ### route parameter
 
 @app.route("/tmpl")
