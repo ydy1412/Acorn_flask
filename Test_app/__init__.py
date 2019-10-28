@@ -1,7 +1,14 @@
 from flask import Flask,g,make_response,Response,request,render_template
 from datetime import datetime,date
+import requests
+
+import google.oauth2.credentials
+import google_auth_oauthlib.flow
+import googleapiclient.discovery
+
 # Application 객체 생성
 app =Flask(__name__)
+
 # 좀 더 세밀한 에러까지 나게 해줌.
 app.debug = True
 ### route parameter
@@ -12,6 +19,10 @@ def res1():
     # 헤더를({'test' : 'ttt'}) 보내고 싶을땐 dict형으로 전송
     return getattr(g,'str','111')
     # make_response는 데이터를 stream 형태로 전송함.
+
+@app.route("/login")
+def login() :
+    return render_template("Login.html")
 
 # before_first_request : 사용자가 처음 사이트에 접속하여 request를 보내자마자 실행되는 함수
 # before_request : 사용자가 같은 사이트에 있더라도 request(F5)를 보내면 실행되는함수. (보통 web filter에 사용됨)
