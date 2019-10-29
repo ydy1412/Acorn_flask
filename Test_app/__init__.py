@@ -127,4 +127,6 @@ def dt() :
     datestr = request.values.get('date',date.today(), type = ymd("%Y-%m-%d"))
     return "우리나라 시간 형식 :" + str(datestr)
 
+if __name__ == "main" :
+    app.run(host='0.0.0.0')
 
