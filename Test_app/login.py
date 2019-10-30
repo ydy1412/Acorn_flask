@@ -45,7 +45,7 @@ def member_checked():
     Id_existence = collect.find_one(login_data)
     client.close()
     if Id_existence is not None :
-        return render_template('main_page.html')
+        return render_template('re_page.html')
     else :
         return "no id"
 
