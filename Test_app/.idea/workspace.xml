@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44b43622-8964-46eb-b539-c1f3b118f217" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/new.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Q1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Q1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
@@ -56,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.login">
+  <component name="RunManager" selected="Python.__init__">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Test_app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,9 +121,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.login" />
         <item itemvalue="Python.mongodb_control" />
-        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
