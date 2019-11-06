@@ -5,7 +5,11 @@ app =Flask(__name__)
 app.debug = True
 
 @app.route('/', methods=['GET', 'POST'])
+def main():
+    return render_template("main_page.html")
 
+
+@app.route('/sur', methods=['GET', 'POST'])
 def test1():
     if request.method == 'POST':
 
@@ -34,13 +38,14 @@ def test1():
         EducationTypes=request.form["EducationTypes"]
         ImportantBenefits=request.form["ImportantBenefits"]
         FormalEducation=request.form["FormalEducation"]
+        MajorUndergrad=request.form["MajorUndergrad"]
         result = {"ProblemSolving": ProblemSolving, "BuildingThings": BuildingThings,"LearningNewTech":LearningNewTech,"BoringDetails":BoringDetails,
                   "JobSecurity":JobSecurity,"DiversityImportant":DiversityImportant,"AnnoyingUI": AnnoyingUI ,"FriendsDevelopers":FriendsDevelopers,
                   "RightWrongWay":RightWrongWay,"UnderstandComputers":UnderstandComputers,"SeriousWork":SeriousWork,"InvestTimeTools":InvestTimeTools,
                   "WorkPayCare":WorkPayCare,"ChallengeMyself":ChallengeMyself,"CompetePeers":CompetePeers,"ChangeWorld":ChangeWorld,
                   "AssessJobRole":AssessJobRole,"AssessJobRemote":AssessJobRemote,"AssessJobProduct":AssessJobProduct,"AssessJobProfDevel":
                   AssessJobProfDevel,"ImportantHiringEducation":ImportantHiringEducation,"ImportantHiringCommunication":ImportantHiringCommunication,
-                  "EducationTypes":EducationTypes,"ImportantBenefits":ImportantBenefits,"FormalEducation":FormalEducation}
+                  "EducationTypes":EducationTypes,"ImportantBenefits":ImportantBenefits,"FormalEducation":FormalEducation,"MajorUndergrad":MajorUndergrad}
         return result
 
     return render_template("Q1.html")
