@@ -2,9 +2,7 @@ from flask import Flask,g,make_response,Response,request,render_template
 from datetime import datetime,date
 import requests
 
-import google.oauth2.credentials
-import google_auth_oauthlib.flow
-import googleapiclient.discovery
+
 
 # Application 객체 생성
 app =Flask(__name__)
