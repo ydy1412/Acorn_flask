@@ -32,6 +32,9 @@
     .carousel-inner {
       height: 100%;
     }
+    ul li {
+      margin-left : 20px;
+    }
 
     @media (min-width: 800px) and (max-width: 850px) {
       .navbar:not(.top-nav-collapse) {
@@ -49,7 +52,11 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand" href="/team_info">
+
+      <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+
+      <a class="navbar-brand" href="/team_info" target="_blank">
+
         <strong>CAN DO IT</strong>
       </a>
 
@@ -65,12 +72,16 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
+
             <a class="nav-link" href="/home">Home
+
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Portpolio">Portpolio</a>
+
+            <a class="nav-link" href="/Portpolio" target="_blank">Portpolio</a>
+
           </li>
           <!-- <li class="nav-item"> -->
             <!-- <a class="nav-link" href="http://daum.net" target="_blank">Daum</a> -->
@@ -93,13 +104,17 @@
             <!-- </a> -->
           <!-- </li> -->
           <li class="nav-item">
-            <a href="/login" class="nav-link border border-light rounded ">
-              LOG IN
+
+
+            <a href="/login" class="nav-link border border-light rounded "
+              target="_blank"> LOG IN
             </a>
           </li>
-
+            <span></span>
           <li class="nav-item">
-            <a href="https://github.com/ydy1412/Acorn_flask.git" class="nav-link border border-light rounded waves-effect waves-light">
+
+            <a href="https://github.com/ydy1412/Acorn_flask.git" class="nav-link border border-light rounded waves-effect waves-light"
+              target="_blank">
               <i class="fab fa-github mr-2"></i>GitHub
             </a>
           </li>
@@ -153,10 +168,10 @@
               </p>
 
               <p class="mb-4 d-none d-md-block">
-                <strong>설문지 응답 결과에 따라 가장 적합한 IT 업종을 추천해주며, 다양한 관련 정보를 제공해줍니다.</strong>
+                <strong>설문 조사를 통해 당신에게 적합한 개발자 타입을 추천해주고 유용한 정보를 제공합니다.</strong>
               </p>
             <form method="POST" action="/">
-              <a target="_blank" href='sur' class="btn btn-outline-white btn-lg">설문 시작하기
+              <a href='/sur' class="btn btn-outline-white btn-lg">설문 시작하기
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
             </form>
@@ -191,7 +206,7 @@
                 <strong>대다수의 웹개발자들은 웹 디자인, 정보설계, 사용자 인터페이스 설계, 프로젝트 관리, 웹 서버 및 데이터베이스 관리, 웹페이지 코딩 및 프로그래밍 관련 기술을 가지고 있다.</strong>
               </p>
                <form method="POST" action="/">
-              <a target="_blank" href="sur" class="btn btn-outline-white btn-lg">설문 시작하기
+              <a href="/sur" class="btn btn-outline-white btn-lg">설문 시작하기
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
                </form>
@@ -232,7 +247,7 @@
                 <strong>Android 및 iOS 등 특정 플랫폼의 개별 특성을 활용하는 특정 애플리케이션을 만든다.</strong>
               </p>
                <form method="POST" action="/">
-              <a target="_blank" href="sur" class="btn btn-outline-white btn-lg">설문 시작하기
+              <a  href="/sur" class="btn btn-outline-white btn-lg">설문 시작하기
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
                </form>
@@ -272,7 +287,7 @@
                 <strong>PC 웹 사이트를 Windows, Mac, Linux 데스크탑 앱으로 컨버팅하는 사이트를 제작한다.</strong>
               </p>
                <form method="POST" action="/">
-              <a target="_blank" href="sur" class="btn btn-outline-white btn-lg">설문 시작하기
+              <a href="sur" class="btn btn-outline-white btn-lg">설문 시작하기
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
                </form>
@@ -446,13 +461,13 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="/static/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="/static/js/mdb.min.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
