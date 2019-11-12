@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b43622-8964-46eb-b539-c1f3b118f217" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../DeepLearning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Test_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Test_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/new.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Q1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Q1.html" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
+=======
+>>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,8 +137,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.new" />
-        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.login" />
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.mongodb_control" />
       </list>
     </recent_temporary>

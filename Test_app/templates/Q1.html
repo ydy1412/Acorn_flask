@@ -47,6 +47,7 @@
           background: #1C2331!important;
       }
   }
+<<<<<<< HEAD
   input {
     width:20px;
     height:20px;
@@ -54,6 +55,11 @@
     border:3px;
   }
   </style>
+=======
+
+    </style>
+s
+>>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
 </head>
 
 <body>
@@ -173,7 +179,11 @@
 
 
 		<div class="table-responsive">
+<<<<<<< HEAD
             <form method="POST" action="final_page">
+=======
+            <form method="POST" action="/final_page" id="frm">
+>>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
 				<table class="table">
 					<div style="overflow:auto; width:20%; height:10%;">
 
@@ -684,7 +694,12 @@
 
 				</table>
 
+<<<<<<< HEAD
              <button type="submit" onclick="button1();" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>
+=======
+             <input class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" onclick="submit_form()" type="text" name="결과보기" value="결과보기">
+<!--			<button id="actres" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>-->
+>>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
             </form>
         </div>
         </div>
@@ -729,12 +744,33 @@
   </footer>
   <!--/.Footer-->
 
+<<<<<<< HEAD
   <!-- SCRIPTS -->
   <script>
      var str = document.getElementById("1");
      document.write(str.children[1].children[0].value)
 
   </script>
+=======
+  <script language="JavaScript">
+    function submit_form(){
+        var inc = document.getElementsByTagName('input');
+        var count=0;
+        for(i=0;i<inc.length;i++){
+            if(inc[i].checked) {
+                count=count+1;
+            }
+        }
+        var form = document.getElementById("frm")
+        if (count<inc.length/5){
+           alert("message");
+        }
+        else {
+            form.submit();
+        }
+    }
+    </script>
+>>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
   <!-- JQuery -->
   <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
