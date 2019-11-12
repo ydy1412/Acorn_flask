@@ -97,7 +97,7 @@ class NN_model :
     def eval_model(self,test_x,text_y,batch_size=20,verbose = 0):
         _acc, _f1score = self.model.evaluate(test_x,text_y, batch_size=batch_size,
                                                                     verbose=verbose)
-        return {"model": self.model,"f1_score" : _f1score}
+        return {"AI_model": self.model,"f1_score" : _f1score}
 
 def save_model(model, yaml_file_name,h5_file_name):
     model_yaml = model.to_yaml()
@@ -111,7 +111,7 @@ def load_model(yaml_file_name,h5_file_name) :
     loaded_model_yaml = yaml_file.read()
     yaml_file.close()
     loaded_model = model_from_yaml(loaded_model_yaml)
-    # load weights into new model
+    # load weights into new AI_model
     loaded_model.load_weights(h5_file_name)
     loaded_model.compile(loss='sparse_categorical_crossentropy',optimizer='adam',metrics=[f1_score])
     return loaded_model
@@ -151,7 +151,7 @@ if __name__ == "__main__" :
             np.save(test_y_directory, test_y)
 
     if sys.argv[1] == 'train':
-        # model = NN_model()
+        # AI_model = NN_model()
         engineer_name = sys.argv[2]
         models = {"name" : engineer_name,"models" : []}
         data_directory = "numpy_array_data/over_sampled_data/"+sys.argv[3]+"/"
@@ -194,11 +194,11 @@ if __name__ == "__main__" :
         for Model in best_models :
             if Model['f1_score'] > best_model['f1_score']:
                     best_model = Model
-        save_model(best_model['model'],"Model_folder/"+engineer_name+".yaml","Model_folder/"+engineer_name+".h5")
+        save_model(best_model['AI_model'],"Model_folder/"+engineer_name+".yaml","Model_folder/"+engineer_name+".h5")
 
 
     # yaml_file_name = "Model_folder/"+ sys.argv[1]
     # h5_file_name = "Model_folder/" + sys.argv[2]
-    # model = load_model(yaml_file_name,h5_file_name)
+    # AI_model = load_model(yaml_file_name,h5_file_name)
     # data = np.random.randint(0, 1, size=(1, 161))
-    # print(model.predict(data))
+    # print(AI_model.predict(data))
