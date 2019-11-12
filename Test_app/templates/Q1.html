@@ -34,16 +34,25 @@
     }
 
     ul li {
-    margin-left : 20px;
+    margin-left : 10px;
     }
-
+    td {
+    text-align : center;
+    }
+    text-al
+    }
 
     @media (min-width: 800px) and (max-width: 850px) {
       .navbar:not(.top-nav-collapse) {
           background: #1C2331!important;
       }
   }
-
+  input {
+    width:20px;
+    height:20px;
+    text-align: center;
+    border:3px;
+  }
   </style>
 </head>
 
@@ -120,7 +129,6 @@
             </a>
           </li>
         </ul>
-
       </div>
     </div>
   </nav>
@@ -165,11 +173,8 @@
 
 
 		<div class="table-responsive">
-            <form method="POST" action="/sur">
+            <form method="POST" action="final_page">
 				<table class="table">
-
-
-
 					<div style="overflow:auto; width:20%; height:10%;">
 
 						<tr>
@@ -192,261 +197,260 @@
 
                     <tbody>
 
-						<tr>
+						<tr id="1">
 
                             <td>문제 푸는 것을 좋아하는가요?</td>
 
-                            <td><input class="test" type="radio" name="ProblemSolving" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="1" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="ProblemSolving" value="Disagree"/></td>
+                            <td><input type="radio" name="1" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="ProblemSolving" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="1" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="ProblemSolving" value="Agree"/></td>
+                            <td><input type="radio" name="1" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="ProblemSolving" value="Strongly agree"/></td>
+                            <td><input type="radio" name="1" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="2">
 
                             <td> 새로운 것에 시도해보는 것을 좋아하시나요?</td>
 
-                            <td><input class="test" type="radio" name="BuildingThings" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="2" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="BuildingThings" value="Disagree"/></td>
+                            <td><input type="radio" name="2" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="BuildingThings" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="2" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="BuildingThings" value="Agree"/></td>
+                            <td><input type="radio" name="2" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="BuildingThings" value="Strongly agree"/></td>
+                            <td><input type="radio" name="2" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="3">
 
                             <td>새로운 기술을 배우는 것을 좋아하시나요?</td>
 
-                            <td><input class="test" type="radio" name="LearningNewTech" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="3" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="LearningNewTech" value="Disagree"/></td>
+                            <td><input type="radio" name="3" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="LearningNewTech" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="3" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="LearningNewTech" value="Agree"/></td>
+                            <td><input type="radio" name="3" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="LearningNewTech" value="Strongly agree"/></td>
+                            <td><input type="radio" name="3" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="4">
 
                             <td>복잡한 것을 깊게 생각하는 것을 싫어하시나요?</td>
 
-                            <td><input class="test" type="radio" name="BoringDetails" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="4" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="BoringDetails" value="Disagree"/></td>
+                            <td><input type="radio" name="4" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="BoringDetails" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="4" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="BoringDetails" value="Agree"/></td>
+                            <td><input type="radio" name="4" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="BoringDetails" value="Strongly agree"/></td>
+                            <td><input type="radio" name="4" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="5">
 
                             <td>일자리의 안정감을 중요시 하시나요?</td>
 
-                            <td><input class="test" type="radio" name="JobSecurity" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="5" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="JobSecurity" value="Disagree"/></td>
+                            <td><input type="radio" name="5" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="JobSecurity" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="5" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="JobSecurity" value="Agree"/></td>
+                            <td><input type="radio" name="5" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="JobSecurity" value="Strongly agree"/></td>
+                            <td><input type="radio" name="5" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="6">
 
                             <td>직장에서의 다양성이 중요하다고 생각하시나요?</td>
 
-                            <td><input class="test" type="radio" name="DiversityImportant" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="6" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="DiversityImportant" value="Disagree"/></td>
+                            <td><input type="radio" name="6" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="DiversityImportant" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="6" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="DiversityImportant" value="Agree"/></td>
+                            <td><input type="radio" name="6" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="DiversityImportant" value="Strongly agree"/></td>
+                            <td><input type="radio" name="6" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="7">
 
                             <td>소프트웨어의 UI가 불편하면 짜증이 나시나요?</td>
 
-                            <td><input class="test" type="radio" name="AnnoyingUI" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="7" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="AnnoyingUI" value="Disagree"/></td>
+                            <td><input type="radio" name="7" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="AnnoyingUI" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="7" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="AnnoyingUI" value="Agree"/></td>
+                            <td><input type="radio" name="7" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="AnnoyingUI" value="Strongly agree"/></td>
+                            <td><input type="radio" name="7" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="8">
 
                             <td>지인 중에 과학자나 엔지니어, 그리고 개발자가 많은 편인가요?</td>
 
-                            <td><input class="test" type="radio" name="FriendsDevelopers" value="Strongly disagree"/></td>
+                            <td><input type="radio" name="8" value="1"/></td>
 
-                            <td><input class="test" type="radio" name="FriendsDevelopers" value="Disagree"/></td>
+                            <td><input type="radio" name="8" value="2"/></td>
 
-                            <td><input class="test" type="radio" name="FriendsDevelopers" value="Somewhat agree"/></td>
+                            <td><input type="radio" name="8" value="3"/></td>
 
-                            <td><input class="test" type="radio" name="FriendsDevelopers" value="Agree"/></td>
+                            <td><input type="radio" name="8" value="4"/></td>
 
-                            <td><input class="test" type="radio" name="FriendsDevelopers" value="Strongly agree"/></td>
+                            <td><input type="radio" name="8" value="5"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="9">
 
                             <td> 옳고 그름에 대한 명확한 기준이 있으신가요? </td>
 
-                            <td><input class="test" type="radio" name="RightWrongWay" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="RightWrongWay" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="RightWrongWay" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="RightWrongWay" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="RightWrongWay" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-
-                        <tr>
+                        <tr id="10">
 
                             <td>컴퓨터에는 아직 내가 이해할 수 없는 것들이 많이 있다고 생각하시나요?</td>
 
-                            <td><input class="test" type="radio" name="UnderstandComputers" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="UnderstandComputers" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="UnderstandComputers" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="UnderstandComputers" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test" type="radio" name="UnderstandComputers" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="11">
 
                             <td>일을 할때 주로 진지하게 임하는 편인가요?</td>
 
-                            <td><input class="test1" type="radio" name="SeriousWork" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="SeriousWork" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="SeriousWork" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="SeriousWork" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="SeriousWork" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-                        <tr>
+                        <tr id="12">
 
                             <td>본인이 사용해야 하는 도구에 능숙해 질때까지 많은 시간을 투자하는 편인가요?</td>
 
-                            <td><input class="test1" type="radio" name="InvestTimeTools" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="InvestTimeTools" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="InvestTimeTools" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="InvestTimeTools" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input class="test1" type="radio" name="InvestTimeTools" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
 
-                        <tr>
+                        <tr id="13">
 
                             <td>월급만 충분히 받는다면 어떤 일을 하든지 상관 없으신가요?</td>
 
-                            <td><input type="radio" name="WorkPayCare" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="WorkPayCare" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="WorkPayCare" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="WorkPayCare" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="WorkPayCare" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="14">
 
                             <td>스스로에게 도전하는 것을 좋아하시나요?</td>
 
-                            <td><input type="radio" name="ChallengeMyself" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChallengeMyself" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChallengeMyself" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChallengeMyself" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChallengeMyself" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="15">
 
                             <td>동료들과 항상 경쟁하는 상태에 놓여있다고 느끼시나요?</td>
 
-                            <td><input type="radio" name="CompetePeers" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="CompetePeers" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="CompetePeers" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="CompetePeers" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="CompetePeers" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="16">
 
                             <td>세상을 바꿔보고 싶으신가요?</td>
 
-                            <td><input type="radio" name="ChangeWorld" value="Strongly disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChangeWorld" value="Disagree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChangeWorld" value="Somewhat agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChangeWorld" value="Agree"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ChangeWorld" value="Strongly agree"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
@@ -464,9 +468,9 @@
 
                             <td>항목</td>
 
-                            <td>매우 중요하지 않다</td>
+                            <td>전혀 중요하지 않다</td>
 
-                            <td>중요하지 않다</td>
+                            <td>별로 중요하지 않다</td>
 
                             <td>중요하다</td>
 
@@ -480,99 +484,99 @@
 
 					<body>
 
-						<tr>
+						<tr id="17">
 
                             <td>회사에서 특별한 업무를 맡는 것이 중요하다고 생각하시나요?  </td>
 
-                            <td><input type="radio" name="AssessJobRole" value="Not at all important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRole" value="Not very important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRole" value="Important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRole" value="Somewhat important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRole" value="Very important"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="18">
 
                             <td> 회사를 선택할 때 재택 근무의 기회를 중요하게 고려하시나요? </td>
 
-                            <td><input type="radio" name="AssessJobRemote" value="Not at all important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRemote" value="Not very important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRemote" value="Important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRemote" value="Somewhat important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobRemote" value="Very important"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="19">
 
                             <td>회사를 선택할 때 본인이 맡는 업무의 가치가 중요했으면 하시나요? (서비스의 질적 향상에 본인이 미치는 영향 등)</td>
 
-                            <td><input type="radio" name="AssessJobProduct" value="Not at all important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobProduct" value="Not very important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobProduct" value="Important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobProduct" value="Somewhat important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="AssessJobProduct" value="Very important"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="20">
 
                             <td> 회사를 선택할 때 본인을 해당 분야의 전문가로 성장시켜 줄 수 있는지를 중요하게 고려하시나요?</td>
 
-                            <td><input type="radio" name='AssessJobProfDevel' value="Not at all important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name='AssessJobProfDevel' value="Not very important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name='AssessJobProfDevel' value="Important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name='AssessJobProfDevel' value="Somewhat important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name='AssessJobProfDevel'value="Very important"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="21">
 
                             <td>개발자로 취업할 시 다음의 정보(예 : 참석 한 학교, 특정 연구 분야, 성적 획득)가 중요하다고 생각하시나요? </td>
 
-                            <td><input type="radio" name="ImportantHiringEducation" value="Not at all important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringEducation" value="Not very important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringEducation" value="Important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringEducation" value="Somewhat important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringEducation" value="Very important"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
 
-						<tr>
+						<tr id="22">
 
                             <td>소프트웨어 개발자로 일할 때 의사소통 능력이 중요하다고 생각하시나요? </td>
 
-                            <td><input type="radio" name="ImportantHiringCommunication" value="Not at all important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringCommunication" value="Not very important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringCommunication" value="Important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringCommunication" value="Somewhat important"/></td>
+                            <td><input type="radio"/></td>
 
-                            <td><input type="radio" name="ImportantHiringCommunication" value="Very important"/></td>
+                            <td><input type="radio"/></td>
 
                         </tr>
                     </body>
@@ -586,16 +590,16 @@
 							<td>다음 중 정규 교육 및 교육 외에 준비한 부분이 있다면 선택해주세요.</td>
 							<td>
 								<center>
-								<select name="EducationTypes" style="width:300px;height:30px;" >
-									<option value="Self-taught">독학</option>
-									<option value="Bootcamp">캠프</option>
-									<option value="Industry certification">자격증</option>
-									<option value="Open source contributions">오픈소스</option>
-									<option value="Coding competition">대회</option>
-									<option value="On-the-job training">연수 교육</option>
-									<option value="Online course">온라인 강의</option>
-									<option value="Hackathon">해커톤 대회</option>
-									<option value="Part-time/evening course">단기간 근무제</option>
+								<select id="23" name="EducationTypes" style="width:300px;height:30px;" >
+									<option>독학</option>
+									<option>캠프</option>
+									<option>자격증</option>
+									<option>오픈소스</option>
+									<option>대회</option>
+									<option>연수 교육</option>
+									<option>온라인 강의</option>
+									<option>해커톤 대회</option>
+									<option>단기간 근무제</option>
 								</select>
 								</center>
 
@@ -608,71 +612,69 @@
 							<td>기본급 의외에 중요하다고 생각하는 요소에 대해서 선택해주세요.</td>
 							<td>
 								<center>
-								<select name="ImportantBenefits" style="width:300px;height:30px;" >
-									<option value="Annual bonus">연간 보너스</option>
-									<option value="Other">기타</option>
-									<option value="Remote options">원격 옵션</option>
-									<option value="Charitable match">자선 경기</option>
-									<option value="Stock options">주식 매입 선택권</option>
-									<option value="Vacation/days off">휴가</option>
-									<option value="Health benefits">건강 급여</option>
-									<option value="Education sponsorship">교육비 제공</option>
-									<option value="Long-term leave">장기 휴가</option>
-									<option value="None of these">없음</option>
-									<option value="Expected work hours">원하는 근무 시간</option>
-									<option value="Private office">개인 사무실</option>
-									<option value="Professional development sponsorship">전문 개발 후원</option>
-									<option value="Retirement">퇴직금</option>
-									<option value="Equipment">장비</option>
-									<option value="Meals">식사비</option>
-									<option value="Child/elder care">육아비</option>
+								<select id="24" name="ImportantBenefits" style="width:300px;height:30px;" >
+									<option>연간 보너스</option>
+									<option>기타</option>
+									<option>원격 옵션</option>
+									<option>자선 경기</option>
+									<option>주식 매입 선택권</option>
+									<option>휴가</option>
+									<option>건강 급여</option>
+									<option>교육비 제공</option>
+									<option>장기 휴가</option>
+									<option>없음</option>
+									<option>원하는 근무 시간</option>
+									<option>개인 사무실</option>
+									<option>전문 개발 후원</option>
+									<option>퇴직금</option>
+									<option>장비</option>
+									<option>식사비</option>
+									<option>육아비</option>
 
 								</select>
 								</center>
 							</td>
-
-						</tr>
-          <tr>
+                        </tr>
+                    <tr>
 
 							<td> 최종 학력은 어떻게 되시나요? </td>
 							<td>
 								<center>
-								<select name="FormalEducation" style="width:300px;height:30px;" >
-									<option value="Bachelor's degree">학사 학위</option>
-									<option value="Master's degree ">석사 학위</option>
-									<option value="Some college/university study without earning a bachelor's degree">대학교</option>
-									<option value="Secondary school">중학교</option>
-									<option value="Doctoral degree">박사 학위</option>
-									<option value="I prefer not to answer">나는 대답을 하고 싶지 않다.</option>
-									<option value="Primary/elementary school">초등학교</option>
-									<option value="Professional degree">전문대</option>
-									<option value="I never completed any formal education">교육을 받은 적 없다</option>
+								<select id="25" me="FormalEducation" style="width:300px;height:30px;" >
+									<option>학사 학위</option>
+									<option>석사 학위</option>
+									<option>대학교</option>
+									<option>중학교</option>
+									<option>박사 학위</option>
+									<option>그다지 대답하고 싶지 않다.</option>
+									<option>초등학교</option>
+									<option>전문대</option>
+									<option>공식 교육을 받지 않았다.</option>
 
 								</select>
 								</center>
 							</td>
-
-           <tr>
+                    <tr>
 							<td> 전공은 어떻게 되시나요?</td>
 							<td>
 								<center>
-								<select name="MajorUndergrad" style="width:300px;height:30px;" >
-									<option value="Computer science or software engineering">컴퓨터 공학 또는 소프트웨어 공학</option>
-									<option value="Computer engineering or electrical/electronics engineering ">전기/전자 공학</option>
-									<option value="Computer programming or Web development">컴퓨터 프로그래밍 또는 웹 개발</option>
-									<option value="Information technology, networking, or system administration">정보 기술, 네트워킹 또는 시스템 관리</option>
-									<option value="A natural science">자연과학</option>
-									<option value="A non-computer-focused engineering discipline">엔지니어링 분야</option>
-									<option value="Mathematics or statistics">수학 또는 통계</option>
-									<option value="Something else">이 외에 다른 과</option>
-									<option value="A humanities discipline">인문학</option>
-                                    <option value="A business discipline">경영학</option>
-                                    <option value="Management information systems">관리 정보 시스템</option>
-                                    <option value="Fine arts or performing arts">예술 분야</option>
-                                    <option value="A social science">사회과학</option>
-                                    <option value="I never declared a major">나는 전공이 없다</option>
-                                    <option value="Psychology">:심리학</option>
-                                    <option value="A health science">건강 과학</option>
+								<select id="26" name="MajorUndergrad" style="width:300px;height:30px;" >
+                                    <option>경영학</option>
+                                    <option>건강 과학</option>
+                                    <option>인문학</option>
+									<option>컴퓨터 공학 또는 소프트웨어 공학</option>
+									<option>전기/전자 공학</option>
+									<option>컴퓨터 프로그래밍 또는 웹 개발</option>
+									<option>정보 기술, 네트워킹 또는 시스템 관리</option>
+									<option>자연과학</option>
+									<option>컴퓨터와 거리가 먼 엔지니어링 분야</option>
+									<option>수학 또는 통계</option>
+									<option>기타</option>
+                                    <option>관리 정보 시스템</option>
+                                    <option>예술 분야</option>
+                                    <option>사회과학</option>
+                                    <option>별로 말하고 싶지 않다.</option>
+                                    <option>심리학</option>
 
 								</select>
 								</center>
@@ -682,8 +684,7 @@
 
 				</table>
 
-             <button type="submit" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>
-<!--			<button id="actres" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>-->
+             <button type="submit" onclick="button1();" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>
             </form>
         </div>
         </div>
@@ -729,14 +730,19 @@
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
+  <script>
+     var str = document.getElementById("1");
+     document.write(str.children[1].children[0].value)
+
+  </script>
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="/static/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="/static/js/mdb.min.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization

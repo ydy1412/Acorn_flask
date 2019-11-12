@@ -12,42 +12,43 @@ def main():
 @app.route('/sur', methods=['GET', 'POST'])
 def test1():
     if request.method == 'POST':
-
-        ProblemSolving = request.form["ProblemSolving"]
-        BuildingThings = request.form["BuildingThings"]
-        LearningNewTech =request.form["LearningNewTech"]
-        BoringDetails = request.form["BoringDetails"]
-        JobSecurity = request.form["JobSecurity"]
-        DiversityImportant=request.form["DiversityImportant"]
-        AnnoyingUI=request.form["AnnoyingUI"]
-        FriendsDevelopers=request.form["FriendsDevelopers"]
-        RightWrongWay=request.form["RightWrongWay"]
-        UnderstandComputers=request.form["UnderstandComputers"]
-        SeriousWork=request.form["SeriousWork"]
-        InvestTimeTools=request.form["InvestTimeTools"]
-        WorkPayCare=request.form["WorkPayCare"]
-        ChallengeMyself=request.form["ChallengeMyself"]
-        CompetePeers=request.form["CompetePeers"]
-        ChangeWorld=request.form["ChangeWorld"]
-        AssessJobRole=request.form["AssessJobRole"]
-        AssessJobRemote=request.form["AssessJobRemote"]
-        AssessJobProduct=request.form["AssessJobProduct"]
-        AssessJobProfDevel=request.form["AssessJobProfDevel"]
-        ImportantHiringEducation=request.form["ImportantHiringEducation"]
-        ImportantHiringCommunication=request.form["ImportantHiringCommunication"]
-        EducationTypes=request.form["EducationTypes"]
-        ImportantBenefits=request.form["ImportantBenefits"]
-        FormalEducation=request.form["FormalEducation"]
-        MajorUndergrad=request.form["MajorUndergrad"]
-        result = {"ProblemSolving": ProblemSolving, "BuildingThings": BuildingThings,"LearningNewTech":LearningNewTech,"BoringDetails":BoringDetails,
-                  "JobSecurity":JobSecurity,"DiversityImportant":DiversityImportant,"AnnoyingUI": AnnoyingUI ,"FriendsDevelopers":FriendsDevelopers,
-                  "RightWrongWay":RightWrongWay,"UnderstandComputers":UnderstandComputers,"SeriousWork":SeriousWork,"InvestTimeTools":InvestTimeTools,
-                  "WorkPayCare":WorkPayCare,"ChallengeMyself":ChallengeMyself,"CompetePeers":CompetePeers,"ChangeWorld":ChangeWorld,
-                  "AssessJobRole":AssessJobRole,"AssessJobRemote":AssessJobRemote,"AssessJobProduct":AssessJobProduct,"AssessJobProfDevel":
-                  AssessJobProfDevel,"ImportantHiringEducation":ImportantHiringEducation,"ImportantHiringCommunication":ImportantHiringCommunication,
-                  "EducationTypes":EducationTypes,"ImportantBenefits":ImportantBenefits,"FormalEducation":FormalEducation,"MajorUndergrad":MajorUndergrad}
-        return result
-
+        try :
+            ProblemSolving = request.form["ProblemSolving"]
+            BuildingThings = request.form["BuildingThings"]
+            LearningNewTech = request.form["LearningNewTech"]
+            BoringDetails = request.form["BoringDetails"]
+            JobSecurity = request.form["JobSecurity"]
+            DiversityImportant = request.form["DiversityImportant"]
+            AnnoyingUI = request.form["AnnoyingUI"]
+            FriendsDevelopers = request.form["FriendsDevelopers"]
+            RightWrongWay = request.form["RightWrongWay"]
+            UnderstandComputers = request.form["UnderstandComputers"]
+            SeriousWork = request.form["SeriousWork"]
+            InvestTimeTools = request.form["InvestTimeTools"]
+            WorkPayCare = request.form["WorkPayCare"]
+            ChallengeMyself = request.form["ChallengeMyself"]
+            CompetePeers = request.form["CompetePeers"]
+            ChangeWorld = request.form["ChangeWorld"]
+            AssessJobRole = request.form["AssessJobRole"]
+            AssessJobRemote = request.form["AssessJobRemote"]
+            AssessJobProduct = request.form["AssessJobProduct"]
+            AssessJobProfDevel = request.form["AssessJobProfDevel"]
+            ImportantHiringEducation = request.form["ImportantHiringEducation"]
+            ImportantHiringCommunication = request.form["ImportantHiringCommunication"]
+            EducationTypes = request.form["EducationTypes"]
+            ImportantBenefits = request.form["ImportantBenefits"]
+            FormalEducation = request.form["FormalEducation"]
+            MajorUndergrad = request.form["MajorUndergrad"]
+            return "Yes"
+        except:
+            return "모두 입력해주세요."
+        # result = {"ProblemSolving": ProblemSolving, "BuildingThings": BuildingThings,"LearningNewTech":LearningNewTech,"BoringDetails":BoringDetails,
+        #           "JobSecurity":JobSecurity,"DiversityImportant":DiversityImportant,"AnnoyingUI": AnnoyingUI ,"FriendsDevelopers":FriendsDevelopers,
+        #           "RightWrongWay":RightWrongWay,"UnderstandComputers":UnderstandComputers,"SeriousWork":SeriousWork,"InvestTimeTools":InvestTimeTools,
+        #           "WorkPayCare":WorkPayCare,"ChallengeMyself":ChallengeMyself,"CompetePeers":CompetePeers,"ChangeWorld":ChangeWorld,
+        #           "AssessJobRole":AssessJobRole,"AssessJobRemote":AssessJobRemote,"AssessJobProduct":AssessJobProduct,"AssessJobProfDevel":
+        #           AssessJobProfDevel,"ImportantHiringEducation":ImportantHiringEducation,"ImportantHiringCommunication":ImportantHiringCommunication,
+        #           "FormalEducation":FormalEducation,"MajorUndergrad":MajorUndergrad,"EducationTypes":EducationTypes,"ImportantBenefits":ImportantBenefits}
     return render_template("Q1.html")
 
 
