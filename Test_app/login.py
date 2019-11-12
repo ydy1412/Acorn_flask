@@ -1,20 +1,21 @@
 from flask import Flask,g,make_response,Response,request,render_template,session
 from pymongo import MongoClient
+import numpy as np
 
 app =Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8zdkjsfhqw]/'
-try :
-    client = MongoClient('mongodb://localhost:27017')
-    if "member" not in client.list_database_names():
-        db = client['member']
-        collect = db['Account']
-        data = {'id': 'ydy1412', 'password': '920910'}
-        collect.insert_one(data)
-        client.close()
-    else:
-        client.close()
-except :
-    print("db problem happend")
+# try :
+#     client = MongoClient('mongodb://localhost:27017')
+#     if "member" not in client.list_database_names():
+#         db = client['member']
+#         collect = db['Account']
+#         data = {'id': 'ydy1412', 'password': '920910'}
+#         collect.insert_one(data)
+#         client.close()
+#     else:
+#         client.close()
+# except :
+#     print("db problem happend")
 
 @app.route("/")
 def helloworld2():
@@ -55,86 +56,48 @@ def member_checked():
     else :
         return "no id"
 
-<<<<<<< HEAD
-@app.route('/sur')
-def Sur():
-=======
 @app.route('/final_page', methods=['GET', 'POST'])
 def test1():
-    if request.method == 'POST':
+    def transform_numpy_array() :
+        if request.method == 'POST':
+            ProblemSolving = request.form["ProblemSolving"]  #
 
-        ProblemSolving = request.form["ProblemSolving"]
-        BuildingThings = request.form["BuildingThings"]
-        LearningNewTech =request.form["LearningNewTech"]
-        BoringDetails = request.form["BoringDetails"]
-        JobSecurity = request.form["JobSecurity"]
-        DiversityImportant=request.form["DiversityImportant"]
-        AnnoyingUI=request.form["AnnoyingUI"]
-        FriendsDevelopers=request.form["FriendsDevelopers"]
-        RightWrongWay=request.form["RightWrongWay"]
-        UnderstandComputers=request.form["UnderstandComputers"]
-        SeriousWork=request.form["SeriousWork"]
-        InvestTimeTools=request.form["InvestTimeTools"]
-        WorkPayCare=request.form["WorkPayCare"]
-        ChallengeMyself=request.form["ChallengeMyself"]
-        CompetePeers=request.form["CompetePeers"]
-        ChangeWorld=request.form["ChangeWorld"]
-        AssessJobRole=request.form["AssessJobRole"]
-        AssessJobRemote=request.form["AssessJobRemote"]
-        AssessJobProduct=request.form["AssessJobProduct"]
-        AssessJobProfDevel=request.form["AssessJobProfDevel"]
-        ImportantHiringEducation=request.form["ImportantHiringEducation"]
-        ImportantHiringCommunication=request.form["ImportantHiringCommunication"]
-        EducationTypes=request.form["EducationTypes"]
-        ImportantBenefits=request.form["ImportantBenefits"]
-        FormalEducation=request.form["FormalEducation"]
-        MajorUndergrad=request.form["MajorUndergrad"]
-        result = {"ProblemSolving": ProblemSolving, "BuildingThings": BuildingThings,"LearningNewTech":LearningNewTech,"BoringDetails":BoringDetails,
-                  "JobSecurity":JobSecurity,"DiversityImportant":DiversityImportant,"AnnoyingUI": AnnoyingUI ,"FriendsDevelopers":FriendsDevelopers,
-                  "RightWrongWay":RightWrongWay,"UnderstandComputers":UnderstandComputers,"SeriousWork":SeriousWork,"InvestTimeTools":InvestTimeTools,
-                  "WorkPayCare":WorkPayCare,"ChallengeMyself":ChallengeMyself,"CompetePeers":CompetePeers,"ChangeWorld":ChangeWorld,
-                  "AssessJobRole":AssessJobRole,"AssessJobRemote":AssessJobRemote,"AssessJobProduct":AssessJobProduct,"AssessJobProfDevel":
-                  AssessJobProfDevel,"ImportantHiringEducation":ImportantHiringEducation,"ImportantHiringCommunication":ImportantHiringCommunication,
-                  "EducationTypes":EducationTypes,"ImportantBenefits":ImportantBenefits,"FormalEducation":FormalEducation,"MajorUndergrad":MajorUndergrad}
-        return result
-
->>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
-    return render_template("Q1.html")
-
-@app.route("/final_page",methods = ['POST'])
-def final_page():
-    if request.method == 'POST':
-        try :
-            ProblemSolving = request.form["ProblemSolving"]
-            BuildingThings = request.form["BuildingThings"]
-            LearningNewTech =request.form["LearningNewTech"]
+            BuildingThings = request.form["BuildingThings"]  #
+            LearningNewTech = request.form["LearningNewTech"]
             BoringDetails = request.form["BoringDetails"]
             JobSecurity = request.form["JobSecurity"]
-            DiversityImportant=request.form["DiversityImportant"]
-            AnnoyingUI=request.form["AnnoyingUI"]
-            FriendsDevelopers=request.form["FriendsDevelopers"]
-            RightWrongWay=request.form["RightWrongWay"]
-            UnderstandComputers=request.form["UnderstandComputers"]
-            SeriousWork=request.form["SeriousWork"]
-            InvestTimeTools=request.form["InvestTimeTools"]
-            WorkPayCare=request.form["WorkPayCare"]
-            ChallengeMyself=request.form["ChallengeMyself"]
-            CompetePeers=request.form["CompetePeers"]
-            ChangeWorld=request.form["ChangeWorld"]
-            AssessJobRole=request.form["AssessJobRole"]
-            AssessJobRemote=request.form["AssessJobRemote"]
-            AssessJobProduct=request.form["AssessJobProduct"]
-            AssessJobProfDevel=request.form["AssessJobProfDevel"]
-            ImportantHiringEducation=request.form["ImportantHiringEducation"]
-            ImportantHiringCommunication=request.form["ImportantHiringCommunication"]
-            EducationTypes=request.form["EducationTypes"]
-            ImportantBenefits=request.form["ImportantBenefits"]
-            FormalEducation=request.form["FormalEducation"]
-            MajorUndergrad=request.form["MajorUndergrad"]
-            return "yes"
-        except :
-            return ""
-    return render_template("Login.html")
+            DiversityImportant = request.form["DiversityImportant"]
+            AnnoyingUI = request.form["AnnoyingUI"]
+            FriendsDevelopers = request.form["FriendsDevelopers"]
+            RightWrongWay = request.form["RightWrongWay"]
+            UnderstandComputers = request.form["UnderstandComputers"]
+            SeriousWork = request.form["SeriousWork"]
+            InvestTimeTools = request.form["InvestTimeTools"]
+            WorkPayCare = request.form["WorkPayCare"]
+            ChallengeMyself = request.form["ChallengeMyself"]
+            CompetePeers = request.form["CompetePeers"]
+            ChangeWorld = request.form["ChangeWorld"]
+            AssessJobRole = request.form["AssessJobRole"]
+            AssessJobRemote = request.form["AssessJobRemote"]
+            AssessJobProduct = request.form["AssessJobProduct"]
+            AssessJobProfDevel = request.form["AssessJobProfDevel"]
+            ImportantHiringEducation = request.form["ImportantHiringEducation"]
+            ImportantHiringCommunication = request.form["ImportantHiringCommunication"]
+            EducationTypes = request.form["EducationTypes"]
+            ImportantBenefits = request.form["ImportantBenefits"]
+            FormalEducation = request.form["FormalEducation"]
+            MajorUndergrad = request.form["MajorUndergrad"]
+            answer_list = [ProblemSolving, BuildingThings, LearningNewTech,
+                           BoringDetails, JobSecurity, DiversityImportant,
+                           AnnoyingUI, FriendsDevelopers, RightWrongWay,
+                           UnderstandComputers, SeriousWork, InvestTimeTools,
+                           WorkPayCare, ChallengeMyself, CompetePeers, ChangeWorld,
+                           AssessJobRole, AssessJobRemote, AssessJobProduct, AssessJobProfDevel,
+                           ImportantHiringEducation, ImportantHiringCommunication, FormalEducation,
+                           MajorUndergrad, EducationTypes, ImportantBenefits]
+            Input_data = np.array(answer_list)
+            return Response(Input_data.shape)
+    return render_template("Q1.html")
 
 if __name__ == "__main__" :
     app.debug = True
