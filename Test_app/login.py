@@ -20,6 +20,10 @@ except :
 def helloworld2():
     return render_template('main_page.html')
 
+@app.route("/sur")
+def sur():
+    return render_template('Q1.html')
+
 @app.route("/home")
 def home():
     return "home"
@@ -51,7 +55,7 @@ def member_checked():
     else :
         return "no id"
 
-@app.route('/sur', methods=['GET', 'POST'])
+@app.route('/final_page', methods=['GET', 'POST'])
 def test1():
     if request.method == 'POST':
 

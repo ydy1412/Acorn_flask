@@ -44,7 +44,8 @@
       }
   }
 
-  </style>
+    </style>
+s
 </head>
 
 <body>
@@ -165,7 +166,7 @@
 
 
 		<div class="table-responsive">
-            <form method="POST" action="/sur">
+            <form method="POST" action="/final_page" id="frm">
 				<table class="table">
 
 
@@ -682,7 +683,7 @@
 
 				</table>
 
-             <button type="submit" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>
+             <input class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" onclick="submit_form()" type="text" name="결과보기" value="결과보기">
 <!--			<button id="actres" class="btn btn-primary" data-title="결과보기" style="width: 100%;" data-toggle="modal" data-target="#result" >결과보기</button>-->
             </form>
         </div>
@@ -728,7 +729,24 @@
   </footer>
   <!--/.Footer-->
 
-  <!-- SCRIPTS -->
+  <script language="JavaScript">
+    function submit_form(){
+        var inc = document.getElementsByTagName('input');
+        var count=0;
+        for(i=0;i<inc.length;i++){
+            if(inc[i].checked) {
+                count=count+1;
+            }
+        }
+        var form = document.getElementById("frm")
+        if (count<inc.length/5){
+           alert("message");
+        }
+        else {
+            form.submit();
+        }
+    }
+    </script>
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
