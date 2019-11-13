@@ -71,7 +71,7 @@ def developerType_Info(devleloperType,have = "Language"):
                      "Nodejs", "AngularJS", "NETCore", "Cordova", "Firebase",
                      "Android", "iOS", "AWS", "MacOS", "LinuxDesktop"]
         youtube = "https://www.youtube.com/embed/fB9ylcWBPRs"
-        info = ["""-	모바일기기에서 사용되는 프로그램, 고객의 요구에 적합한 어플리케이션 등을 개발하고 유지·관리·보수한다.
+        info = ["""모바일기기에서 사용되는 프로그램, 고객의 요구에 적합한 어플리케이션 등을 개발하고 유지·관리·보수한다.
          달력이나 일정관리, 시계, 카메라 등의 기본 유틸리티뿐 아니라, 지도, 검색, 교통, 커뮤니티, 은행, 교육, 게임, 영화 등 온라인으로 
          볼 수 있는 모든 것들을 앱으로 구현시키는 역할을 한다. 모바일콘텐츠를 개발하려면 먼저 기술력도 있어야 하지만 사람들이 궁금해 하는 
          상황을 정확하게 파악할 수 있는 능력이 필요하고 이러한 능력에 기초하여 창의적인 발상으로 콘텐츠나 아이템을 선정하는 것이 중요하다. 
@@ -262,29 +262,6 @@ def test1():
     else :
         developerType = "Data scientist"
     # devleloperType = "Desktop applications developer"
-@app.route('/result', methods=['GET', 'POST'])
-def result():
-    developerType = "Desktop applications developer"
-    search, img, info, have_info, graph_path, youtube, map = developerType_Info(developerType)
-    img_list, title_list, link_list = book_API(search)
-
-    return render_template("result_transform.html",
-                           img=img,
-                           info=info,
-                           devleloperType=developerType,
-                           graph_path=graph_path,
-                           have_info=have_info,
-                           page1_img=img_list[:6],
-                           page1_title=title_list[:6],
-                           page1_link=link_list[:6],
-                           page2_img=img_list[6:],
-                           page2_title=title_list[6:],
-                           page2_link=link_list[6:],
-                           youtube=youtube,
-                           map=map)
-
-
-
 
     search, img, info, have_info, graph_path, youtube, map = developerType_Info(developerType)
     img_list, title_list, link_list = book_API(search)
