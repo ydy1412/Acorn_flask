@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, Markup, sessions
+from flask import Flask, request, render_template, Markup
 from pymongo import MongoClient
 import numpy as np
 import urllib.request
@@ -280,6 +280,30 @@ def test1():
                            page2_link=link_list[6:],
                            youtube=youtube,
                            map=map)
+
+
+@app.route('/result', methods=['GET', 'POST'])
+def result():
+    developerType = "Web developer"
+    #developerType = "Desktop applications developer"
+    search, img, info, have_info, graph_path, youtube, map = developerType_Info(developerType)
+    img_list, title_list, link_list = book_API(search)
+
+    return render_template("result_transform.html",
+                           img=img,
+                           info=info,
+                           devleloperType=developerType,
+                           graph_path=graph_path,
+                           have_info=have_info,
+                           page1_img=img_list[:6],
+                           page1_title=title_list[:6],
+                           page1_link=link_list[:6],
+                           page2_img=img_list[6:],
+                           page2_title=title_list[6:],
+                           page2_link=link_list[6:],
+                           youtube=youtube,
+                           map=map)
+
 
 if __name__ == "__main__" :
     app.debug = True
