@@ -2,23 +2,10 @@ from flask import Flask, request, render_template, Markup, sessions
 from pymongo import MongoClient
 import numpy as np
 import urllib.request
+import urllib
 import json
-import keras
-from keras import backend as K
-from keras.models import model_from_yaml,Sequential
-from keras import regularizers
-from keras.layers import Dense,Dropout
+import joblib
 
-def load_model(yaml_file_name,h5_file_name) :
-    yaml_file = open(yaml_file_name, 'r')
-    loaded_model_yaml = yaml_file.read()
-    print(yaml_file)
-    yaml_file.close()
-    loaded_model = model_from_yaml(loaded_model_yaml)
-    # load weights into new AI_model
-    loaded_model.load_weights(h5_file_name)
-    loaded_model.compile(loss='sparse_categorical_crossentropy',optimizer='adam',metrics=[f1score])
-    return loaded_model
 
 def book_API(search):
     book_list=[]
@@ -46,48 +33,6 @@ def book_API(search):
     for i in range(len(book_list)): title_list.append(Markup(str(book_list[i]["title"])))
     for i in range(len(book_list)): link_list.append(Markup(str(book_list[i]["link"])))
     return img_list,title_list,link_list
-
-def recall(y_target, y_pred):
-            y_target_yn = K.round(K.clip(y_target, 0, 1))  # 실제값을 0(Negative) 또는 1(Positive)로 설정한다
-            y_pred_yn = K.round(K.clip(y_pred, 0, 1))  # 예측값을 0(Negative) 또는 1(Positive)로 설정한다
-
-            # True Positive는 실제 값과 예측 값이 모두 1(Positive)인 경우이다
-            count_true_positive = K.sum(y_target_yn * y_pred_yn)
-
-            # (True Positive + False Negative) = 실제 값이 1(Positive) 전체
-            count_true_positive_false_negative = K.sum(y_target_yn)
-
-            # Recall =  (True Positive) / (True Positive + False Negative)
-            # K.epsilon()는 'divide by zero error' 예방차원에서 작은 수를 더한다
-            recall = count_true_positive / (count_true_positive_false_negative + K.epsilon())
-
-            # return a single tensor value [1,2,4,5,6]
-            return recall
-
-def precision( y_target, y_pred):
-        # clip(t, clip_value_min, clip_value_max) : clip_value_min~clip_value_max 이외 가장자리를 깎아 낸다
-        # round : 반올림한다
-        y_pred_yn = K.round(K.clip(y_pred, 0, 1))  # 예측값을 0(Negative) 또는 1(Positive)로 설정한다
-        y_target_yn = K.round(K.clip(y_target, 0, 1))  # 실제값을 0(Negative) 또는 1(Positive)로 설정한다
-
-        # True Positive는 실제 값과 예측 값이 모두 1(Positive)인 경우이다
-        count_true_positive = K.sum(y_target_yn * y_pred_yn)
-
-        # (True Positive + False Positive) = 예측 값이 1(Positive) 전체
-        count_true_positive_false_positive = K.sum(y_pred_yn)
-
-        # Precision = (True Positive) / (True Positive + False Positive)
-        # K.epsilon()는 'divide by zero error' 예방차원에서 작은 수를 더한다
-        precision = count_true_positive / (count_true_positive_false_positive + K.epsilon())
-
-        # return a single tensor value
-        return precision
-
-def f1score(y_target, y_pred):
-        _recall = recall(y_target, y_pred)
-        _precision = precision(y_target, y_pred)
-        # K.epsilon()는 'divide by zero error' 예방차원에서 작은 수를 더한다
-        _f1score = (2 * _recall * _precision) / (_recall + _precision + K.epsilon())
 
 def developerType_Info(devleloperType,have = "Language"):
     if devleloperType == "Web developer":
@@ -195,8 +140,12 @@ def developerType_Info(devleloperType,have = "Language"):
 app =Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8zdkjsfhqw]/'
 # print()
-# model = load_model("AI_model/ydy1412.yaml","AI_model/ydy1412.h5")
-# print(model)
+model = None
+
+def load_model():
+    global model
+    model = joblib.load("AI_model/Randomforest.pkl")
+
 # try :
 #     client = MongoClient('mongodb://localhost:27017')
 #     if "member" not in client.list_database_names():
@@ -251,11 +200,12 @@ def member_checked():
 
 @app.route('/final_page', methods=['GET', 'POST'])
 def test1():
+    global model
+    AI_model = model
     def transform_numpy_array() :
         if request.method == 'POST':
-            ProblemSolving = request.form["ProblemSolving"]  #
-
-            BuildingThings = request.form["BuildingThings"]  #
+            ProblemSolving = request.form["ProblemSolving"]
+            BuildingThings = request.form["BuildingThings"]
             LearningNewTech = request.form["LearningNewTech"]
             BoringDetails = request.form["BoringDetails"]
             JobSecurity = request.form["JobSecurity"]
@@ -290,24 +240,33 @@ def test1():
                            ImportantHiringEducation, ImportantHiringCommunication, FormalEducation,
                            MajorUndergrad, EducationTypes, ImportantBenefits]
 
-            Input_data = np.zeros((161,),dtype = np.int64)
+            Input_data = np.zeros((1,161),dtype = np.int64)
             for i, data in enumerate(answer_list) :
-                Input_data[5*i+int(data)-1] = 1
+                Input_data[0,5*i+int(data)-1] = 1
             return Input_data
-    output_data = model.predict(transform_numpy_array())
-
-
-    devleloperType = "Mobile developer"
-
+    data = transform_numpy_array()
+    print(data)
+    output_data = AI_model.predict(data)
+    print(output_data)
+    if output_data == 0 :
+        developerType = "Mobile developer"
+    elif output_data == 1:
+        developerType = "Web developer"
+    elif output_data == 2:
+        developerType = "Desktop applications developer"
+    elif output_data == 3:
+        developerType = "Database administrator"
+    else :
+        developerType = "Data scientist"
     # devleloperType = "Desktop applications developer"
 
-    search, img, info, have_info, graph_path, youtube, map = developerType_Info(devleloperType)
+    search, img, info, have_info, graph_path, youtube, map = developerType_Info(developerType)
     img_list, title_list, link_list = book_API(search)
 
     return render_template("result_transform.html",
                            img=img,
                            info=info,
-                           devleloperType=devleloperType,
+                           devleloperType=developerType,
                            graph_path=graph_path,
                            have_info=have_info,
                            page1_img=img_list[:6],
@@ -321,4 +280,5 @@ def test1():
 
 if __name__ == "__main__" :
     app.debug = True
-    app.run(host = "0.0.0.0")
+    load_model()
+    app.run(host = "0.0.0.0",threaded=False)

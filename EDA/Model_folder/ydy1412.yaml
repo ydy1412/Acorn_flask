@@ -24,14 +24,14 @@ config:
           scale: 2.0
           seed: null
       kernel_regularizer: null
-      name: dense_7
+      name: dense_1
       trainable: true
       units: 50
       use_bias: true
   - class_name: Dropout
     config:
       dtype: float32
-      name: dropout_6
+      name: dropout_1
       noise_shape: null
       rate: 0.2
       seed: null
@@ -55,14 +55,14 @@ config:
           scale: 1.0
           seed: null
       kernel_regularizer: null
-      name: dense_8
+      name: dense_2
       trainable: true
-      units: 25
+      units: 50
       use_bias: true
   - class_name: Dropout
     config:
       dtype: float32
-      name: dropout_7
+      name: dropout_2
       noise_shape: null
       rate: 0.2
       seed: null
@@ -86,14 +86,14 @@ config:
           scale: 1.0
           seed: null
       kernel_regularizer: null
-      name: dense_9
+      name: dense_3
       trainable: true
-      units: 25
+      units: 50
       use_bias: true
   - class_name: Dropout
     config:
       dtype: float32
-      name: dropout_8
+      name: dropout_3
       noise_shape: null
       rate: 0.2
       seed: null
@@ -117,14 +117,14 @@ config:
           scale: 1.0
           seed: null
       kernel_regularizer: null
-      name: dense_10
+      name: dense_4
       trainable: true
-      units: 25
+      units: 50
       use_bias: true
   - class_name: Dropout
     config:
       dtype: float32
-      name: dropout_9
+      name: dropout_4
       noise_shape: null
       rate: 0.2
       seed: null
@@ -148,14 +148,14 @@ config:
           scale: 1.0
           seed: null
       kernel_regularizer: null
-      name: dense_11
+      name: dense_5
       trainable: true
-      units: 25
+      units: 50
       use_bias: true
   - class_name: Dropout
     config:
       dtype: float32
-      name: dropout_10
+      name: dropout_5
       noise_shape: null
       rate: 0.2
       seed: null
@@ -179,9 +179,9 @@ config:
           scale: 2.0
           seed: null
       kernel_regularizer: null
-      name: dense_12
+      name: dense_6
       trainable: true
       units: 5
       use_bias: true
-  name: sequential_2
+  name: sequential_1
 keras_version: 2.3.1

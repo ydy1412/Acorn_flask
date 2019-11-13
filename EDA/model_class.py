@@ -196,7 +196,16 @@ if __name__ == "__main__" :
                     best_model = Model
         save_model(best_model['AI_model'],"Model_folder/"+engineer_name+".yaml","Model_folder/"+engineer_name+".h5")
 
-
+    if sys.argv[1] == 'train2':
+        engineer_name = sys.argv[2]
+        data_directory = "numpy_array_data/over_sampled_data/" + sys.argv[3] + "/"
+        data = np.load(data_directory+ "train_x.npy")
+        model = NN_model()
+        model.build_model([161, 50, 50, 50, 50, 50, 5])
+        model.train_model_test(np.load(data_directory + "train_x.npy"), np.load(data_directory + "train_y.npy"),
+                               np.load(data_directory + "val_x.npy"), np.load(data_directory + "val_y.npy"))
+        save_model(model.model, "Model_folder/" + engineer_name + ".yaml",
+                   "Model_folder/" + engineer_name + ".h5")
     # yaml_file_name = "Model_folder/"+ sys.argv[1]
     # h5_file_name = "Model_folder/" + sys.argv[2]
     # AI_model = load_model(yaml_file_name,h5_file_name)
