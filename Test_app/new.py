@@ -16,7 +16,7 @@ def sur():
 @app.route('/final_page', methods=['GET', 'POST'])
 def test1():
     if request.method == 'POST':
-<<<<<<< HEAD
+
         try :
             ProblemSolving = request.form["ProblemSolving"]
             BuildingThings = request.form["BuildingThings"]
@@ -54,7 +54,7 @@ def test1():
         #           "AssessJobRole":AssessJobRole,"AssessJobRemote":AssessJobRemote,"AssessJobProduct":AssessJobProduct,"AssessJobProfDevel":
         #           AssessJobProfDevel,"ImportantHiringEducation":ImportantHiringEducation,"ImportantHiringCommunication":ImportantHiringCommunication,
         #           "FormalEducation":FormalEducation,"MajorUndergrad":MajorUndergrad,"EducationTypes":EducationTypes,"ImportantBenefits":ImportantBenefits}
-=======
+
         try:
             ProblemSolving = request.form["ProblemSolving"]
             BuildingThings = request.form["BuildingThings"]
@@ -92,7 +92,6 @@ def test1():
             return result
         except:
             pass
->>>>>>> 09e52580271c6a80899f3c09331fbe2e2f24e633
     return render_template("Q1.html")
 
 
