@@ -1,152 +1,62 @@
 {% extends "result_page.html" %}
-{% block developerType %}
-  <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-language-tab" data-toggle="pill" href="#pills-language" role="tab"
-          aria-controls="pills-language" aria-selected="true">Language</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-database-tab" data-toggle="pill" href="#pills-database" role="tab"
-          aria-controls="pills-database" aria-selected="false">Database</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-framework-tab" data-toggle="pill" href="#pills-framework" role="tab"
-          aria-controls="pills-framework" aria-selected="false">Framework</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-platform-tab" data-toggle="pill" href="#pills-platform" role="tab"
-          aria-controls="pills-platform" aria-selected="false">Platform</a>
-      </li>
-    </ul>
 
-    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-language"  role="tabpanel" aria-labelledby="pills-language-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
-            <img src={{graph_path[0]}} height="400px" weight="450px" alt="developer">
-          </div>
+{% block result_info %}
+    <div class="col-lg-7 col-md-7 mb-3 box">
+        <div class="accordion" id="accordionExample">
+          <div class="card z-depth-0 bordered">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  {{devleloperType}}란?<i class="fas fa-angle-down rotate-icon align-items-right" ></i>
+                </button>
+              </h5>
 
-          <div class="col-lg-6 col-md-12 mb-3 box">
-            <ul class="nav nav-pills mb-3" id="pill-tab" role="tablist">
-              <li class="nav-item">
-                  <a class="nav-link active" id="pills-{{have_info[0]}}-tab" data-toggle="pill" href="#pills-{{have_info[0]}}" role="tab"
-                    aria-controls="pills-{{have_info[0]}}" aria-selected="true">{{have_info[0]}}</a>
-                </li>
-              {% for i in range(1,5) %}
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-{{map[i]}}-tab" data-toggle="pill" href="#pills-{{map[i]}}" role="tab"
-                    aria-controls="pills-{{map[i]}}" aria-selected="true">{{have_info[i]}}</a>
-                </li>
-              {% endfor %}
-            </ul>
-            <div class="tab-content pt-2 pl-1" id="pill2-tabContent">
-                <div class="tab-pane fade show active" id="pills-{{have_info[0]}}"  role="tabpanel" aria-labelledby="pills-{{have_info[0]}}-tab">
-                  <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedLanguage/{{map[0]}}.html" name="iframe_a"></iframe>
-                </div>
-                {% for i in range(1,5) %}
-                  <div class="tab-pane fade" id="pills-{{map[i]}}"  role="tabpanel" aria-labelledby="pills-{{map[i]}}-tab">
-                    <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedLanguage/{{map[i]}}.html" name="iframe_a"></iframe>
-                  </div>
-                {% endfor %}
+
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+              data-parent="#accordionExample">
+              <div class="card-body">
+                {{info[0]}}
+              </div>
             </div>
           </div>
-        </div>
-
-
-        <div class="tab-pane fade" id="pills-database" role="tabpanel" aria-labelledby="pills-database-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
-            <img src={{graph_path[1]}} height="400px" weight="450px" alt="developer">
-          </div>
-          <div class="col-lg-6 col-md-12 mb-3 box">
-            <ul class="nav nav-pills mb-3" id="pill2-tab" role="tablist">
-              <li class="nav-item">
-                  <a class="nav-link active" id="pills-{{map[5]}}-tab" data-toggle="pill" href="#pills-{{map[5]}}" role="tab"
-                    aria-controls="pills-{{map[5]}}" aria-selected="true">{{have_info[5]}}</a>
-                </li>
-              {% for i in range(6,10) %}
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-{{map[i]}}-tab" data-toggle="pill" href="#pills-{{map[i]}}" role="tab"
-                    aria-controls="pills-{{map[i]}}" aria-selected="true">{{have_info[i]}}</a>
-                </li>
-              {% endfor %}
-            </ul>
-            <div class="tab-content pt-2 pl-1" id="pill2-tabContent">
-                <div class="tab-pane fade show active" id="pills-{{map[5]}}"  role="tabpanel" aria-labelledby="pills-{{map[5]}}-tab">
-                  <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedDatabase/{{map[5]}}.html" name="iframe_a"></iframe>
-                </div>
-                {% for i in range(6,10) %}
-                  <div class="tab-pane fade" id="pills-{{map[i]}}"  role="tabpanel" aria-labelledby="pills-{{map[i]}}-tab">
-                    <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedDatabase/{{map[i]}}.html" name="iframe_a"></iframe>
-                  </div>
-                {% endfor %}
+          <div class="card z-depth-0 bordered">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  {{info[1]}}<i class="fas fa-angle-down rotate-icon align-items-right"></i>
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                {{info[2]}}
+              </div>
             </div>
           </div>
-        </div>
-
-
-        <div class="tab-pane fade" id="pills-framework" role="tabpanel" aria-labelledby="pills-framework-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
-            <img src={{graph_path[2]}} height="400px" weight="450px" alt="developer">
-          </div>
-          <div class="col-lg-6 col-md-12 mb-3 box">
-            <ul class="nav nav-pills mb-3" id="pill2-tab" role="tablist">
-              <li class="nav-item">
-                  <a class="nav-link active" id="pills-{{map[10]}}-tab" data-toggle="pill" href="#pills-{{map[10]}}" role="tab"
-                    aria-controls="pills-{{map[10]}}" aria-selected="true">{{have_info[10]}}</a>
-                </li>
-              {% for i in range(11,15) %}
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-{{map[i]}}-tab" data-toggle="pill" href="#pills-{{map[i]}}" role="tab"
-                    aria-controls="pills-{{map[i]}}" aria-selected="true">{{have_info[i]}}</a>
-                </li>
-              {% endfor %}
-            </ul>
-            <div class="tab-content pt-2 pl-1" id="pill2-tabContent">
-                <div class="tab-pane fade show active" id="pills-{{map[10]}}"  role="tabpanel" aria-labelledby="pills-{{map[10]}}-tab">
-                  <iframe height="400px" width="100%" src="/static/img/map/HaveWorkedFramework/{{map[10]}}.html" name="iframe_a"></iframe>
-                </div>
-                {% for i in range(11,15) %}
-                  <div class="tab-pane fade" id="pills-{{map[i]}}"  role="tabpanel" aria-labelledby="pills-{{map[i]}}-tab">
-                    <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedFramework/{{map[i]}}.html" name="iframe_a"></iframe>
-                  </div>
-                {% endfor %}
+          <div class="card z-depth-0 bordered">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  {{info[3]}}<i class="fas fa-angle-down rotate-icon"></i>
+                </button>
+              </h5>
             </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="pills-platform" role="tabpanel" aria-labelledby="pills-platform-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
-            <img src={{graph_path[3]}} height="400px" weight="450px" alt="developer">
-          </div>
-          <div class="col-lg-6 col-md-12 mb-3 box">
-            <ul class="nav nav-pills mb-3" id="pill2-tab" role="tablist">
-              <li class="nav-item">
-                  <a class="nav-link active" id="pills-{{map[15]}}-tab" data-toggle="pill" href="#pills-{{map[15]}}" role="tab"
-                    aria-controls="pills-{{map[15]}}" aria-selected="true">{{have_info[15]}}</a>
-                </li>
-              {% for i in range(16,20) %}
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-{{map[i]}}-tab" data-toggle="pill" href="#pills-{{map[i]}}" role="tab"
-                    aria-controls="pills-{{map[i]}}" aria-selected="true">{{have_info[i]}}</a>
-                </li>
-              {% endfor %}
-            </ul>
-            <div class="tab-content pt-2 pl-1" id="pill2-tabContent">
-                <div class="tab-pane fade show active" id="pills-{{map[15]}}"  role="tabpanel" aria-labelledby="pills-{{map[15]}}-tab">
-                  <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedPlatform/{{map[15]}}.html" name="iframe_a"></iframe>
-                </div>
-                {% for i in range(16,20) %}
-                  <div class="tab-pane fade" id="pills-{{map[i]}}"  role="tabpanel" aria-labelledby="pills-{{map[i]}}-tab">
-                    <iframe height="350px" width="100%" src="/static/img/map/HaveWorkedPlatform/{{map[i]}}.html" name="iframe_a"></iframe>
-                  </div>
-                {% endfor %}
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                {{info[4]}}
+              </div>
             </div>
           </div>
         </div>
     </div>
-
 {% endblock %}
 
-{% block developerType2 %}
+{% block developerType %}
+ <section class="section-preview text-center">
     <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="pills-language-tab" data-toggle="pill" href="#pills-language" role="tab"
@@ -168,11 +78,11 @@
 
     <div class="tab-content pt-2 pl-1" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-language"  role="tabpanel" aria-labelledby="pills-language-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
-            <img src={{graph_path[0]}} height="400px" weight="450px" alt="developer">
+          <div class="col-lg-12 col-md-5 mb-3 box">
+            <img src={{graph_path[0]}} weight="100%" height="100%"  alt="developer">
           </div>
 
-          <div class="col-lg-6 col-md-12 mb-3 box">
+          <div class="col-lg-12 col-md-5 mb-3 box">
             <ul class="nav nav-pills mb-3" id="pill-tab" role="tablist">
               <li class="nav-item">
                   <a class="nav-link active" id="pills-{{have_info[0]}}-tab" data-toggle="pill" href="#pills-{{have_info[0]}}" role="tab"
@@ -200,10 +110,10 @@
 
 
         <div class="tab-pane fade" id="pills-database" role="tabpanel" aria-labelledby="pills-database-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
+          <div class="col-lg-12 col-md-12 mb-3 box">
             <img src={{graph_path[1]}} height="400px" weight="450px" alt="developer">
           </div>
-          <div class="col-lg-6 col-md-12 mb-3 box">
+          <div class="col-lg-12 col-md-12 mb-3 box">
             <ul class="nav nav-pills mb-3" id="pill2-tab" role="tablist">
               <li class="nav-item">
                   <a class="nav-link active" id="pills-{{map[5]}}-tab" data-toggle="pill" href="#pills-{{map[5]}}" role="tab"
@@ -231,10 +141,10 @@
 
 
         <div class="tab-pane fade" id="pills-framework" role="tabpanel" aria-labelledby="pills-framework-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
+          <div class="col-lg-12 col-md-12 mb-3 box">
             <img src={{graph_path[2]}} height="400px" weight="450px" alt="developer">
           </div>
-          <div class="col-lg-6 col-md-12 mb-3 box">
+          <div class="col-lg-12 col-md-12 mb-3 box">
             <ul class="nav nav-pills mb-3" id="pill2-tab" role="tablist">
               <li class="nav-item">
                   <a class="nav-link active" id="pills-{{map[10]}}-tab" data-toggle="pill" href="#pills-{{map[10]}}" role="tab"
@@ -261,10 +171,10 @@
         </div>
 
         <div class="tab-pane fade" id="pills-platform" role="tabpanel" aria-labelledby="pills-platform-tab">
-          <div class="col-lg-6 col-md-10 mb-3 box">
+          <div class="col-lg-12 col-md-12 mb-3 box">
             <img src={{graph_path[3]}} height="400px" weight="450px" alt="developer">
           </div>
-          <div class="col-lg-6 col-md-12 mb-3 box">
+          <div class="col-lg-12 col-md-12 mb-3 box">
             <ul class="nav nav-pills mb-3" id="pill2-tab" role="tablist">
               <li class="nav-item">
                   <a class="nav-link active" id="pills-{{map[15]}}-tab" data-toggle="pill" href="#pills-{{map[15]}}" role="tab"
@@ -290,7 +200,7 @@
           </div>
         </div>
     </div>
-
+</section>
 {% endblock %}
 
 

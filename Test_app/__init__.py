@@ -6,6 +6,14 @@ import urllib
 import json
 import joblib
 
+app =Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8zdkjsfhqw]/'
+# print()
+model = None
+
+def load_model():
+    global model
+    model = joblib.load("AI_model/Randomforest.pkl")
 
 def book_API(search):
     book_list=[]
@@ -51,10 +59,10 @@ def developerType_Info(devleloperType,have = "Language"):
                      "AngularJS", "Nodejs", "NETCore", "React", "Cordova",
                      "AWS", "LinuxDesktop", "Android", "MacOS", "WordPress"]
         youtube = "https://www.youtube.com/embed/rhJJlCrjqDo"
-        info = ["""● Web developer는 HTTP 프로토콜을 커뮤니케이션 매체로 사용하는 웹 페이지, 웹 사이트 등 WWW 기반 
+        info = ["""HTTP 프로토콜을 커뮤니케이션 매체로 사용하는 웹 페이지, 웹 사이트 등 WWW 기반 
         소프트웨어 개발자 또는 소프트웨어 엔지니어를 말한다. 대다수의 웹개발자들은 웹 디자인, 정보설계, 사용자 인터페이스 설계, 프로젝트 관리,
          웹 서버 및 데이터베이스 관리, 웹페이지 코딩 및 프로그래밍 관련 기술을 가지고 있다.""",
-        "● 직업만족도 : 70.2점","● 재택근무비율 :	70.12%"]
+        "직업만족도" ,"70.2점","재택근무비율","70.12%"]
     elif devleloperType == "Mobile developer":
         search = ["자바스크립트 모바일", "MySQL 모바일", "Node.js 모바일", "AngularJS 모바일"]
         img = "static/img/developerType/Mobile_developer.PNG"
@@ -71,10 +79,12 @@ def developerType_Info(devleloperType,have = "Language"):
                      "Nodejs", "AngularJS", "NETCore", "Cordova", "Firebase",
                      "Android", "iOS", "AWS", "MacOS", "LinuxDesktop"]
         youtube = "https://www.youtube.com/embed/fB9ylcWBPRs"
-        info = ["""● Mobile developer는 모바일기기에서 사용되는 프로그램, 고객의 요구에 적합한 어플리케이션 등을 개발하고 유지·관리·보수한다. 
-        달력이나 일정관리, 시계, 카메라 등의 기본 유틸리티뿐 아니라, 지도, 검색, 교통, 커뮤니티, 은행, 교육, 게임, 영화 등 온라인으로 
-        볼 수 있는 모든 것들을 앱으로 구현시키는 역할을 한다. 모바일콘텐츠를 개발하려면 먼저 기술력도 있어야 하지만 사람들이 궁금해 하는 
-        상황을 정확하게 ""","● 직업만족도 : 71.1점","● 재택근무비율 : 72.85%"]
+        info = ["""모바일기기에서 사용되는 프로그램, 고객의 요구에 적합한 어플리케이션 등을 개발하고 유지·관리·보수한다.
+         달력이나 일정관리, 시계, 카메라 등의 기본 유틸리티뿐 아니라, 지도, 검색, 교통, 커뮤니티, 은행, 교육, 게임, 영화 등 온라인으로 
+         볼 수 있는 모든 것들을 앱으로 구현시키는 역할을 한다. 모바일콘텐츠를 개발하려면 먼저 기술력도 있어야 하지만 사람들이 궁금해 하는 
+         상황을 정확하게 파악할 수 있는 능력이 필요하고 이러한 능력에 기초하여 창의적인 발상으로 콘텐츠나 아이템을 선정하는 것이 중요하다. 
+         기본적으로 전산프로그래밍 능력과 그래픽 구현 능력을 갖추어야 하기 때문에 정보통신 관련학과 출신자들이 많다.""","직업만족도 ",
+                "71.1점","재택근무비율","72.85%"]
     elif devleloperType == "Desktop applications developer":
         search = ["SQL Server", ".NET Core", "MySQL", "Linux"]
         img = "static/img/developerType/Desktop_applications_developer.png"
@@ -91,10 +101,10 @@ def developerType_Info(devleloperType,have = "Language"):
                      "NETCore", "AngularJS", "Nodejs", "Xamarin", "React",
                      "LinuxDesktop", "Android", "AWS", "MacOS", "iOS"]
         youtube = "https://www.youtube.com/embed/qZAkIpkPbmc"
-        info = ["""● Desktop applications developer는 -	desktop 개발자는 응용 소프트웨어 개발자라고도 하며 소프트웨어를 개발·완성시키기 
+        info = [""" 응용 소프트웨어 개발자라고도 하며 소프트웨어를 개발·완성시키기 
         위한 전체적인 개발 계획과 자원 조달 계획을 편성한다. 응용시스템에 대한 정보보호의 방법과 계획을 설정하고 소프트웨어의 세부적인 기능 및 
         사양에 관한 상세 설계를 한다. 해당 컴퓨터시스템에 개발된 프로그램을 설치하고 기능 및 성능을 종합적으로 평가·분석하고 패키지성의 개발 소프트웨어에 
-        대해서는 체계적인 버전관리를 한다. 또, 테스트를 통해 버그를 수정하는 역할을 한다. ""","● 직업만족도 : 68.9점","● 재택근무비율 : 76.49%"]
+        대해서는 체계적인 버전관리를 한다. 또, 테스트를 통해 버그를 수정하는 역할을 한다. ""","직업만족도","68.9점","재택근무비율", "76.49%"]
     elif devleloperType == "Database administrator":
         search = ["SQL Server", "Node.js", "MySQL", "AWS"]
         img = "static/img/developerType/Database_administrator.png"
@@ -111,9 +121,9 @@ def developerType_Info(devleloperType,have = "Language"):
                      "Nodejs", "AngularJS", "NETCore", "React", "Cordova",
                      "AWS", "LinuxDesktop", "Android", "WordPress", "MacOS"]
         youtube = "https://www.youtube.com/embed/oNuIAA5LvUQ"
-        info = ["""● Database administrator는 데이터베이스를 설계하고, 최적화를 위한 관리 업무를 수행한다. 일반적으로 전문대학 및 대학교에서 컴퓨터공학, 
+        info = ["""데이터베이스를 설계하고, 최적화를 위한 관리 업무를 수행한다. 일반적으로 전문대학 및 대학교에서 컴퓨터공학, 
         전산학, 수학 등을 전공하고 진출한다. 각종 데이터베이스관리시스템을 비롯해 데이터베이스의 운영과 관련한 하드웨어 및 소프트웨어에 대한 지식이 필요하다.""",
-                "● 직업만족도 : 68.9점","● 재택근무비율 : 	77.59"]
+                "직업만족도","68.9점","재택근무비율", "77.59"]
     elif devleloperType == "Data scientist":
         search = ["SQL Server", "Node.js", "MySQL", "Linux"]
         img = "static/img/developerType/Data_scientist.jpg"
@@ -130,17 +140,13 @@ def developerType_Info(devleloperType,have = "Language"):
                      "Nodejs", "AngularJS", "NETCore", "Hadoop", "Spark",
                      "LinuxDesktop", "AWS", "Android", "MacOS", "RaspberryPi" ]
         youtube = "https://www.youtube.com/embed/-tmypCjhfkE"
-        info = ["""● Data scientist는 복잡한 비즈니스 문제를 모델링하고 인사이트를 도추라며 통계학, 알고리즘, 데이터 마이닝, 
+        info = ["""복잡한 비즈니스 문제를 모델링하고 인사이트를 도추라며 통계학, 알고리즘, 데이터 마이닝, 
         시각화를 통해 그 속에서 기회를 찾아내는 사람이다. 이런 고급분석기술에 더해, 용량이 크고 다양한 유형의 dataset 을 다루는데 능숙하고, 
-        특정한 목적 혹은 컴퓨팅 환경의 데이터 베이스 아키텍처를 수립할 수 있으며 분석결과를 이해 관계자들과 커뮤니케이션 할 수 있어야한다. ""","● 직업만족도 : 72.2점","● 재택근무비율 : 	76.05%"]
+        특정한 목적 혹은 컴퓨팅 환경의 데이터 베이스 아키텍처를 수립할 수 있으며 분석결과를 이해 관계자들과 커뮤니케이션 할 수 있어야한다. """,
+                "직업만족도","72.2점","재택근무비율","76.05%"]
     else:
         pass
     return search,img,info, have_info, graph_path,youtube,map
-
-app =Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8zdkjsfhqw]/'
-# print()
-model = None
 
 def load_model():
     global model
