@@ -251,9 +251,7 @@ def test1():
                 Input_data[0,5*i+int(data)-1] = 1
             return Input_data
     data = transform_numpy_array()
-    print(data)
     output_data = AI_model.predict(data)
-    print(output_data)
     if output_data == 0 :
         developerType = "Mobile developer"
     elif output_data == 1:
@@ -285,7 +283,7 @@ def test1():
                            map=map)
 
 if __name__ == "__main__" :
-    app.debug = True
+    app.debug = False
     load_model()
     app.run(host = "0.0.0.0",threaded=False,port=5000)
 
